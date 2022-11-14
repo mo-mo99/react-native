@@ -1,26 +1,91 @@
 import { StyleSheet,Image, Text, View } from 'react-native';
 
 export default function App() {
-  var myloop = []
-  for (let i = 0; i < 8; i++) {
-    myloop.push(
-      <View style={styles.child}>
-        <Image
-        style={styles.image}
-        source={{
-          uri: 'https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?w=2000'
-        }}
-          />
-        <Text style={styles.text}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text>
-      </View>
-    );
-  }
+  const contacts = [
+    {
+      name: 'John Doe',
+      time: '12 jan 11:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147131.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1Wq8GZJCNEniFbHKD5YCsxm3Mfwmxnh1zQ&usqp=CAU'
+    },
+    {
+      name: 'Mark Doe',
+      time: '12 jan 12:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147132.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1Wq8GZJCNEniFbHKD5YCsxm3Mfwmxnh1zQ&usqp=CAU'
+    },
+    {
+      name: 'Frank Doe',
+      time: '12 jan 13:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147133.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1Wq8GZJCNEniFbHKD5YCsxm3Mfwmxnh1zQ&usqp=CAU'
+    },
+    {
+      name: 'James Doe',
+      time: '12 jan 14:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147134.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1Wq8GZJCNEniFbHKD5YCsxm3Mfwmxnh1zQ&usqp=CAU'
+    },
+    {
+      name: 'Jordan boor',
+      time: '12 jan 15:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147135.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHtT01NkPRmYezUuwD2nQIdMvzWrVLHpdhg&usqp=CAU'
+    },
+    {
+      name: 'Adam Smith',
+      time: '12 jan 16:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147136.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHtT01NkPRmYezUuwD2nQIdMvzWrVLHpdhg&usqp=CAU'
+    },
+    {
+      name: 'Clara boor',
+      time: '12 jan 17:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147137.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHtT01NkPRmYezUuwD2nQIdMvzWrVLHpdhg&usqp=CAU'
+    },
+    {
+      name: 'Stephen Johnson',
+      time: '12 jan 18:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147138.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHtT01NkPRmYezUuwD2nQIdMvzWrVLHpdhg&usqp=CAU'
+    },
+    {
+      name: 'Frank Nelson',
+      time: '12 jan 19:14am',
+      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147139.png',
+      connection: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHtT01NkPRmYezUuwD2nQIdMvzWrVLHpdhg&usqp=CAU'
+    },
+  ]
   
   return (
     <View style={styles.container}>
-      {
-        myloop
-      }
+      {contacts.map((i) => (
+        <View style={styles.item}>
+          
+          <View style={styles.data}>
+          
+          <Image 
+          style={styles.image}
+          source={{
+            uri: i.avatar
+          }}></Image>
+          
+          <View>
+          <Text style={{fontSize:15, fontWeight: 'bold'}}>{i.name}</Text>
+          <Text>{i.time}</Text>
+          </View>
+          </View>
+
+          <Image
+          style={styles.call}
+          source={{
+            uri: i.connection
+          }}
+          ></Image>
+
+        </View>
+))}
     </View>
   );
 }
@@ -28,16 +93,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgray',
-  },
-  child: {
-    flex: 1,
     backgroundColor: '#fff',
-    width: "100%",
-    margin: 4 ,
-    borderRadius: 20,
-    alignItems: 'center',
-    flexDirection: "row"
+  },
+  item: {
+    flex:1,
+    alignItems: "center",
+    flexDirection: "row",
+    borderBottomWidth: 0.5,
+    borderBottomColor: 'black',
+    justifyContent: 'space-between'
+  },
+  data: {
+    alignItems: "center",
+    flexDirection: "row",
   },
   image: {
     width:50,
@@ -45,10 +113,10 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     margin: 10
   },
-  text: {
-    color: 'blue', 
-    fontSize: 18, 
-    width: '70%', 
-    marginLeft: 6
+  call: {
+    width:30,
+    height: 30,
+    borderRadius: 30,
+    marginRight: 15,
   }
 });
