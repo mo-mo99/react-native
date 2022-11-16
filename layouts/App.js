@@ -1,31 +1,22 @@
-import { StyleSheet,Image, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet,Image, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
 
   return (
-    <View style={{flex: 1}}>
-      <View style={styles.title}>
-        <Text style={{color: '#fff',fontSize: 28}}>The lorem ipsum is</Text>
-      </View>
-      <View style={styles.body}>
-        <Text style={{fontSize: 20, width: '80%', fontWeight: 'bold', marginTop: 5}}>The lorem ipsum is, in printing, a series of meaningless</Text>
-        <Text style={{width: '80%', color: 'gray', marginTop: 5}}>The lorem ipsum is, in printing, a series of meaningless words used temporarily to 
-          calibrate a layout, the final text replacing the false text as soon as it is 
-          ready or the layout is completed. Generally, a false Latin text, Lorem ipsum or Lipsum, is used</Text>
-        <Text style={{color:'#00f8fa', width: '80%', marginTop: 5}}>The lorem ipsum is, in printing, a series of meaningless</Text>
-        <Text style={{color:'gray', width: '80%'}}>2017-11-27 13:03:01</Text>
-        <View style={{flexDirection: 'row', marginTop: 10, alignItems: 'center', width: '80%'}}>
-          <Image
-          style={styles.avatar}
+    <View style={styles.body}>
+        <Image
+          style={{width:150, height: 150, borderRadius:75, margin: 30}}
           source={{
-            uri : 'https://cdn-icons-png.flaticon.com/512/147/147139.png'
-          }}></Image>
-          <Text style={{marginLeft: 10, fontSize: 22, color: '#00eefa', fontWeight: 'bold'}}>John Doe</Text>
-        </View>
+            uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMKNsBt5QHBOwzvpCQXQ-bc2Aq8O3825_RbQ&usqp=CAU'
+          }}
+        />
+        <Text style={{color: '#6c6c6c', fontSize: 18, fontWeight: 'bold'}}>Congratulation, your order is accepted</Text>
+        <Text style={{color: '#a7a7a7', width: '70%', marginTop: 20, fontWeight: 'bold'}}>The lorem ipsum is, in printing, a series of meaningless words used temporarily to 
+          calibrate a layout,</Text>  
         <TouchableOpacity style={styles.button}>
-          <Text style={{color:'#fff'}}>Like</Text>
+          <Text style={{color:'#fff'}}>Continue</Text>
         </TouchableOpacity>
-      </View>
+      
     
         
         
@@ -36,7 +27,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   body: {
-    flex: 5,
+    flex: 1,
     backgroundColor: '#fff',
     width: "100%",
     marginTop: 4 ,
@@ -44,26 +35,12 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 4,
-    backgroundColor: '#00eefa',
+    backgroundColor: '#0080ff',
     height: 40,
     borderRadius: 30,
-    width: '80%',
+    width: '50%',
     justifyContent: 'center',
-    alignItems: 'center'
-  },
-  title: {
-    flex: 1,
-    backgroundColor: '#00eefa',
-    width: '100%',
     alignItems: 'center',
-    justifyContent: "center",
-  },
-  avatar: {
-    width: 80, 
-    height: 80, 
-    borderRadius: 40,
-    borderWidth: 5,
-    borderColor: '#00eefa'
-
+    marginTop: 20
   }
 });
