@@ -2,22 +2,22 @@ import { StyleSheet,Image, Text, View } from 'react-native';
 
 export default function App() {
   var myloop = []
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 10; i++) {
     myloop.push(
       <View style={styles.child}>
         <Image
         style={styles.image}
         source={{
-          uri: 'https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?w=2000'
+          uri: `https://cdn-icons-png.flaticon.com/512/147/14713${i}.png`
         }}
           />
-        <Text style={styles.text}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text>
       </View>
     );
   }
   
   return (
     <View style={styles.container}>
+
       {
         myloop
       }
@@ -28,27 +28,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   child: {
-    flex: 1,
-    backgroundColor: '#fff',
-    width: "100%",
-    margin: 4 ,
-    borderRadius: 20,
-    alignItems: 'center',
-    flexDirection: "row"
+    width: '33%', 
+    height: '15%', 
+    marginRight: 1,
+    marginBottom:1
   },
   image: {
-    width:50,
-    height: 50,
-    borderRadius: 30,
-    margin: 10
-  },
-  text: {
-    color: 'blue', 
-    fontSize: 18, 
-    width: '70%', 
-    marginLeft: 6
+    width: '100%',
+    height: '100%',
   }
 });
