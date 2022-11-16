@@ -17,7 +17,6 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <View style={styles.item}>
         <Image
           style={{width: 200, height: 200}}
           source={{
@@ -46,10 +45,6 @@ export default function App() {
         </TouchableOpacity>
       </View>
       
-      
-      
-      
-    </View>
   );
 }
 
@@ -57,9 +52,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  item: {
-    flex: 5,
     width: "100%",
     marginTop: 4 ,
     alignItems: 'center',
